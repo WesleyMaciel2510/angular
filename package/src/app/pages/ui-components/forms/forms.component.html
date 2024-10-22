@@ -1,0 +1,149 @@
+<mat-card class="cardWithShadow theme-card">
+  <mat-card-header>
+    <mat-card-title class="m-b-0">Form</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="b-t-1">
+    <form [formGroup]="donorForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">Nome</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="Nome" formControlName="name" />
+          </mat-form-field>
+        </div>
+  
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">CPF</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="CPF" formControlName="cpf" />
+          </mat-form-field>
+        </div>
+  
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">RG</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="RG" formControlName="rg" />
+          </mat-form-field>
+        </div>
+  
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">Data de Nascimento</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="Data de Nascimento" formControlName="birthDate" />
+          </mat-form-field>
+        </div>
+  
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">Sexo</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="Sexo" formControlName="sex" />
+          </mat-form-field>
+        </div>
+  
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">Nome da Mãe</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="Nome da Mãe" formControlName="motherName" />
+          </mat-form-field>
+        </div>
+  
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">Nome do Pai</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="Nome do Pai" formControlName="fatherName" />
+          </mat-form-field>
+        </div>
+  
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">Email</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="Email" formControlName="email" />
+          </mat-form-field>
+        </div>
+  
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">CEP</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="CEP" formControlName="postalCode" />
+          </mat-form-field>
+        </div>
+  
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">Endereço</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="Endereço" formControlName="address" />
+          </mat-form-field>
+        </div>
+  
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">Número</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="Número" formControlName="addressNumber" />
+          </mat-form-field>
+        </div>
+  
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">Bairro</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="Bairro" formControlName="neighborhood" />
+          </mat-form-field>
+        </div>
+  
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">Cidade</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="Cidade" formControlName="city" />
+          </mat-form-field>
+        </div>
+  
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">Estado</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="Estado" formControlName="state" />
+          </mat-form-field>
+        </div>
+  
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">Telefone Fixo</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="Telefone Fixo" formControlName="landline" />
+          </mat-form-field>
+        </div>
+  
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">Celular</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="Celular" formControlName="mobile" />
+          </mat-form-field>
+        </div>
+  
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">Altura</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="Altura" formControlName="height" />
+          </mat-form-field>
+        </div>
+  
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">Peso</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="Peso" formControlName="weight" />
+          </mat-form-field>
+        </div>
+  
+        <div class="col-lg-6">
+          <mat-label class="f-w-600 m-b-8 d-block">Tipo Sanguíneo</mat-label>
+          <mat-form-field appearance="outline" class="w-100" color="primary">
+            <input matInput placeholder="Tipo Sanguíneo" formControlName="bloodType" />
+          </mat-form-field>
+        </div>
+      </div>
+  
+      <div class="m-t-12">
+        <button mat-flat-button color="primary" class="m-r-8">Submit</button>
+        <button mat-stroked-button color="warn">Cancel</button>
+      </div>
+    </form>
+  </mat-card-content>
+  
+</mat-card>
