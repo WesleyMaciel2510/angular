@@ -5,7 +5,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { TablerIconsModule } from 'angular-tabler-icons';
 
-interface stats {
+interface Stats {
   id: number;
   color: string;
   title: string;
@@ -14,7 +14,7 @@ interface stats {
   percent: string;
 }
 
-interface stats2 {
+interface Stats2 {
   id: number;
   time: string;
   color: string;
@@ -23,7 +23,6 @@ interface stats2 {
   link?: string;
 }
 
-
 @Component({
   selector: 'app-upcoming-schedules',
   standalone: true,
@@ -31,9 +30,9 @@ interface stats2 {
   templateUrl: './upcoming-schedules.component.html',
 })
 export class AppUpcomingSchedulesComponent {
-  constructor() { }
+  constructor() {}
 
-  stats: stats[] = [
+  stats: Stats[] = [
     {
       id: 1,
       color: 'primary',
@@ -68,7 +67,7 @@ export class AppUpcomingSchedulesComponent {
     },
   ];
 
-  stats2: stats2[] = [
+  stats2: Stats2[] = [
     {
       id: 1,
       time: '09.30 am',
@@ -90,23 +89,23 @@ export class AppUpcomingSchedulesComponent {
     },
     {
       id: 4,
-      time: '12.30 pm',
+      time: '01.30 pm',
       color: 'warning',
       title: 'New sale recorded',
       link: '#ML-3467',
     },
     {
       id: 5,
-      time: '12.30 pm',
+      time: '02.30 pm',
       color: 'error',
       title: 'New arrival recorded',
       link: '#ML-3467',
     },
     {
       id: 6,
-      time: '12.30 pm',
+      time: '03.30 pm',
       color: 'success',
-      subtext: 'Payment was made of $64.95 to Michael',
+      subtext: 'Another payment was made of $64.95 to Michael',
     },
   ];
 }

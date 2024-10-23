@@ -11,7 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 export interface productsData {
   id: number;
   imagePath: string;
-  uname: string;
+  username: string;
   budget: number;
   priority: string;
 }
@@ -20,28 +20,28 @@ const PRODUCT_DATA: productsData[] = [
   {
     id: 1,
     imagePath: 'assets/images/profile/user-1.jpg',
-    uname: 'iPhone 13 pro max-Pacific Blue-128GB storage',
+    username: 'iPhone 13 pro max-Pacific Blue-128GB storage',
     budget: 180,
     priority: 'confirmed',
   },
   {
     id: 2,
     imagePath: 'assets/images/profile/user-2.jpg',
-    uname: 'Apple MacBook Pro 13 inch-M1-8/256GB-space',
+    username: 'Apple MacBook Pro 13 inch-M1-8/256GB-space',
     budget: 90,
     priority: 'cancelled',
   },
   {
     id: 3,
     imagePath: 'assets/images/profile/user-3.jpg',
-    uname: 'PlayStation 5 DualSense Wireless Controller',
+    username: 'PlayStation 5 DualSense Wireless Controller',
     budget: 120,
     priority: 'rejected',
   },
   {
     id: 4,
     imagePath: 'assets/images/profile/user-4.jpg',
-    uname: 'Amazon Basics Mesh, Mid-Back, Swivel Office',
+    username: 'Amazon Basics Mesh, Mid-Back, Swivel Office',
     budget: 160,
     priority: 'confirmed',
   },

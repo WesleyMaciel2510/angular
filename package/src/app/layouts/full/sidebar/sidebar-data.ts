@@ -11,11 +11,17 @@ export const navItems: NavItem[] = [
     route: '/dashboard',
   },
   {
-    navCap: 'Ui Components',
+    navCap: 'Formuláios',
+  },
+  {
+    displayName: 'Forms',
+    iconName: 'stethoscope',
+    bgcolor: 'primary',
+    route: '/ui-components/forms',
   },
   {
     displayName: 'Badge',
-    iconName: 'rosette',
+    iconName: 'pill',
     bgcolor: 'primary',
     route: '/ui-components/badge',
   },
@@ -36,12 +42,6 @@ export const navItems: NavItem[] = [
     iconName: 'layout-navbar-expand',
     bgcolor: 'primary',
     route: '/ui-components/menu',
-  },
-  {
-    displayName: 'Forms',
-    iconName: 'layout-navbar-expand',
-    bgcolor: 'primary',
-    route: '/ui-components/forms',
   },
   {
     displayName: 'Tooltips',
@@ -69,7 +69,7 @@ export const navItems: NavItem[] = [
   },
   {
     displayName: 'Icons',
-    iconName: 'mood-smile',
+    iconName: 'heart',
     bgcolor: 'primary',
     route: '/extra/icons',
   },

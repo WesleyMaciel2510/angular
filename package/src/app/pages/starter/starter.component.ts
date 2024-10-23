@@ -7,8 +7,6 @@ import { AppUpcomingSchedulesComponent } from 'src/app/components/upcoming-sched
 import { AppTopEmployeesComponent } from 'src/app/components/top-employees/top-employees.component';
 import { AppBlogComponent } from 'src/app/components/apps-blog/apps-blog.component';
 
-
-
 @Component({
   selector: 'app-starter',
   standalone: true,

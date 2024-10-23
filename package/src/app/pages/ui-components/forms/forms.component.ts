@@ -7,6 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
+import { HttpClient } from '@angular/common/http';
 
 interface Food {
   value: string;
@@ -28,44 +29,79 @@ interface Food {
     MatCheckboxModule,
   ],
   templateUrl: './forms.component.html',
-  //styleUrls: ['./forms.component.css']
 })
 export class AppFormsComponent {
-
   donorForm: FormGroup;
+  mockDonor: { name: string; cpf: string; rg: string; birthDate: string; sex: string; motherName: string; fatherName: string; email: string; postalCode: string; address: string; number: number; neighborhood: string; city: string; state: string; landline: string; mobile: string; height: number; weight: number; bloodType: string; };
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private http: HttpClient) {
     this.donorForm = this.fb.group({
       name: ['', Validators.required],
-      cpf: ['', [Validators.required, Validators.pattern(/^\d{11}$/)]],
-      rg: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
+      cpf: ['', Validators.required],
+      rg: ['', Validators.required],
       birthDate: ['', Validators.required],
       sex: ['', Validators.required],
       motherName: ['', Validators.required],
       fatherName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      postalCode: ['', [Validators.required, Validators.pattern(/^\d{5}-\d{3}$/)]],
+      postalCode: ['', Validators.required],
       address: ['', Validators.required],
-      addressNumber: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
+      addressNumber: ['', Validators.required],
       neighborhood: ['', Validators.required],
       city: ['', Validators.required],
       state: ['', Validators.required],
-      landline: ['', Validators.pattern(/^\(\d{2}\) \d{4}-\d{4}$/)],
-      mobile: ['', [Validators.required, Validators.pattern(/^\(\d{2}\) \d{5}-\d{4}$/)]],
-      height: ['', [Validators.required, Validators.pattern(/^\d+(\.\d{1,2})?$/)]],
-      weight: ['', [Validators.required, Validators.pattern(/^\d+(\.\d{1,2})?$/)]],
+      landline: [''],
+      mobile: ['', Validators.required],
+      height: ['', Validators.required],
+      weight: ['', Validators.required],
       bloodType: ['', Validators.required]
     });
+
+    this.mockDonor = {
+      name: "Milena Analu Pires",
+      cpf: "77525609950",
+      rg: "440845415",
+      birthDate: "1964-05-23",
+      sex: "FEMALE",
+      motherName: "Isadora Marli",
+      fatherName: "Noah Severino César Pires",
+      email: "mmilenaanalupires@keffin.com.br",
+      postalCode: "39801-678",
+      address: "Rua Kurt W. Rothe",
+      number: 675,
+      neighborhood: "Castro Pires",
+      city: "Teófilo Otoni",
+      state: "MG",
+      landline: "(33) 3611-4613",
+      mobile: "(33) 98481-0191",
+      height: 1.53,
+      weight: 80.0,
+      bloodType: "O-"
+    };
   }
 
-  onSubmit() {
-    if (this.donorForm.valid) {
-      console.log(this.donorForm.value);
-    } else {
-      console.error('Form is invalid');
-    }
+  populateFormWithMockData() {
+    this.donorForm.setValue(this.mockDonor);
   }
-  
+
+  apiUrl = 'http://localhost:8097/api/bloodDonation/create';
+
+  onSubmit() {
+    //try {
+      //console.log(this.donorForm.value);
+      this.http.post(this.apiUrl, this.mockDonor).subscribe({
+        next: (response: any) => {
+          console.log('Success:', response);
+        },
+        error: (error : any) => {
+          console.error('Error:', error);
+        }
+      });
+    /* } catch(error) {
+      console.error('Form is invalid');
+    } */
+  }
+
   country: Food[] = [
     { value: 'steak-0', viewValue: 'USA' },
     { value: 'pizza-1', viewValue: 'India' },
@@ -93,3 +129,6 @@ export class AppFormsComponent {
 
   selectedState = this.state[3].value;
 }
+
+
+
